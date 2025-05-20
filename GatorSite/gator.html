@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GATOR Przwozy autobusowe</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.png" alt="GATOR logo" width="40" height="40" class="me-2">
+        <span>GATOR</span>
+      </a>
+      <div class="d-flex ms-auto">
+        <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Zaloguj się</button>
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#registerModal">Zarejestruj się</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content: Kup bilet & Rezerwacja -->
+  <div class="container my-5">
+    <div class="row gy-4">
+      <!-- Kup bilet -->
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h2 class="card-title mb-4">Kup bilet</h2>
+          <form>
+            <div class="row mb-3">
+              <div class="col-6">
+                <input type="text" class="form-control" placeholder="Podaj miejscowość">
+              </div>
+              <div class="col-6">
+                <input type="date" class="form-control">
+              </div>
+            </div>
+            <div class="list-group mb-3">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5 class="mb-1">Olsztyn - Warszawa</h5>
+                  <small>Odjazd: 7 Maj 13:45</small>
+                </div>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#purchaseModal">Kup bilet</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Rezerwacja autobusu -->
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h2 class="card-title mb-4">Zarezerwuj autobus</h2>
+          <p>Wypełnij formularz w aplikacji, aby zarezerwować autobus na wybrany przejazd.</p>
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#reservationModal">Rezerwuj busa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Zaloguj się</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="email@domena.pl">
+            </div>
+            <div class="mb-3 input-group">
+              <input type="password" class="form-control" placeholder="Hasło">
+              <button class="btn btn-outline-secondary" type="button">👁️</button>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Kontynuuj</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Utwórz konto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="email@domena.pl">
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Hasło">
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Powtórz hasło">
+            </div>
+            <button type="submit" class="btn btn-success w-100">Kontynuuj</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Purchase Confirmation Modal -->
+  <div class="modal fade" id="purchaseModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Potwierdzenie zakupu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Czy na pewno chcesz kupić bilet Olsztyn - Warszawa za 24,99 zł?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+          <button type="button" class="btn btn-success">Tak, kupuję</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Modal -->
+  <div class="modal fade" id="reservationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Rezerwacja autobusu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Imię"></div>
+              <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Nazwisko"></div>
+              <div class="col-md-6 mb-3"><input type="tel" class="form-control" placeholder="Numer telefonu"></div>
+              <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Nazwa firmy (opcjonalnie)"></div>
+              <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Typ przejazdu"></div>
+              <div class="col-md-6 mb-3"><input type="datetime-local" class="form-control"></div>
+              <div class="col-md-6 mb-3"><input type="datetime-local" class="form-control" placeholder="Powrót (opcjonalnie)"></div>
+              <div class="col-md-6 mb-3"><input type="number" class="form-control" placeholder="Liczba pasażerów"></div>
+            </div>
+            <div class="mb-3 form-check"><input class="form-check-input" type="checkbox" id="ac"><label class="form-check-label" for="ac">Klimatyzacja</label></div>
+            <div class="mb-3 form-check"><input class="form-check-input" type="checkbox" id="wifi"><label class="form-check-label" for="wifi">Wi-Fi</label></div>
+            <div class="mb-3 form-check"><input class="form-check-input" type="checkbox" id="toilet"><label class="form-check-label" for="toilet">Toaleta</label></div>
+            <div class="mb-3 form-check"><input class="form-check-input" type="checkbox" id="baggage"><label class="form-check-label" for="baggage">Miejsce na bagaż</label></div>
+            <div class="mb-3"><textarea class="form-control" rows="3" placeholder="Dodatkowe potrzeby (opcjonalne)"></textarea></div>
+            <div class="mb-3"><strong>Cena: ???? zł</strong></div>
+            <button type="submit" class="btn btn-success w-100">Zapłać</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
